@@ -1,0 +1,24 @@
+{% extends 'base/template.html.twig' %}
+
+{% block title %}Incendios na área{% endblock %}
+    {% set title = "Houve incendio na área" %}
+    {% block page_title %}{{ title }}!{% endblock %}
+{% block content %}
+    <div class="example-wrapper">
+        <div class="form-group">
+            <div class="mb-5">
+                <label for="initialDate">Data inicial</label>
+                <input type="date" name="initialDate" id="initialDate" class="form-control" aria-describedby="helpId">
+                <small id="helpId" class="text-muted">insira a data inicial</small>
+            </div>
+            <div>
+                <label for="initialDate">Data final</label>
+                <input type="date" name="finalDate" id="finalDate" class="form-control" aria-describedby="helpId">
+                <small id="helpId" class="text-muted">insira a data final</small>
+            </div>
+        </div>
+        {% if response != null %}
+            {{ dump(response) }}
+        {% endif %}
+    </div>
+{% endblock %}
