@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd3a5ad0-e579-402c-aa99-132bd0c9e356" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/api/hadFire.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/api/hadFire.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base/template.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/template.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/menu.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -142,6 +139,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/base" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -174,7 +172,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571516951898</updated>
-      <workItem from="1571516953193" duration="19953000" />
+      <workItem from="1571516953193" duration="24369000" />
     </task>
     <servers />
   </component>
