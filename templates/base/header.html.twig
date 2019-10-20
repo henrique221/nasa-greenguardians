@@ -110,7 +110,8 @@
             <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
                 {% if app.user %}
-                    <span class="name" style="font-family: 'Long Cang', cursive; font-size:20px">{{ app.user.username }}</span>
+                    <span class="name"
+                          style="font-family: 'Long Cang', cursive; font-size:20px">{{ app.user.username }}</span>
                 {% else %}
                     <i class="iconsminds-male-2" style="font-size: 20px"></i>
                 {% endif %}
@@ -118,6 +119,9 @@
 
             <div class="dropdown-menu dropdown-menu-right mt-3">
                 {% if app.user %}
+                    {% if is_granted("ROLE_PRODUTOR") %}
+                        <a class="dropdown-item" href="{{ path('produtor_index', {'id': app.user.produtor.id}) }}">Perfil</a>
+                    {% endif %}
                     <a class="dropdown-item" href="{{ path('app_logout') }}">Logout</a>
                 {% else %}
                     <a class="dropdown-item" href="{{ path('app_login') }}">Login</a>
