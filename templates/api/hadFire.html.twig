@@ -1,7 +1,7 @@
 {% extends 'base/template.html.twig' %}
 
 {% block title %}Incendios na área{% endblock %}
-    {% set title = "Houve incendio na área" %}
+    {% set title = "Houve incêndio na área" %}
     {% block page_title %}{{ title }}!{% endblock %}
 {% block content %}
     <div class="example-wrapper">
@@ -17,8 +17,37 @@
                 <small id="helpId" class="text-muted">insira a data final</small>
             </div>
         </div>
+
+        <h3>Mapa de incêndios</h3>
+        <!--The div element for the map -->
+        <div id="map"></div>
+
         {% if response != null %}
             {{ dump(response) }}
         {% endif %}
     </div>
+    <style>
+        #map {
+            width: 100%;
+            height: 400px;
+            background-color: grey;
+        }
+    </style>
+
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // The location of Uluru
+            var uluru = {lat: -9.956201, lng: -59.400656};
+            // The map, centered at Uluru
+            var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 10, center: uluru});
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({position: uluru, map: map});
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEhagDXPf-hrqX8fUZOMr26rGeV3Kneaw&callback=initMap">
+    </script>
+
 {% endblock %}
