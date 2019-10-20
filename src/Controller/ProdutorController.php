@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Produtor;
+use App\Entity\Propriedade;
 use App\Form\ProdutorType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,6 +33,10 @@ class ProdutorController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
+            $propriedade = new Propriedade();
+            $propriedade->setLocalizacao($request->request->get('local'));
+            $propriedade->setProdutorId($produtor);
+
             $this->getDoctrine()->getRepository(Produtor::class)->save($produtor);
             return $this->redirectToRoute('index');
         }
