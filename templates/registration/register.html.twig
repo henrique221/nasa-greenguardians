@@ -3,7 +3,7 @@
 {% block title %}Register{% endblock %}
 
 {% block content %}
-    <h1>Registro</h1>
+    <h1>Registro {{ produtor is defined ? 'de produtor' : '' }}</h1>
     <div class="form-side">
         {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.username, {attr: {class: "form-control"}}) }}
@@ -20,4 +20,9 @@
         </div>
         {{ form_end(registrationForm) }}
     </div>
+    {% if produtor is not defined %}
+        <a href="{{ path('register_produtor') }}">Sou produtor</a>
+    {% else %}
+        <a href="{{ path('app_register') }}">Sou usuário</a>
+    {% endif %}
 {% endblock %}

@@ -19,6 +19,14 @@ class ProdutorRepository extends ServiceEntityRepository
         parent::__construct($registry, Produtor::class);
     }
 
+    public function save(Produtor $produtor)
+    {
+        $em = $this->getEntityManager();
+        $em->beginTransaction();
+        $em->merge($produtor);
+        $em->commit();
+        $em->flush();
+    }
     // /**
     //  * @return Produtor[] Returns an array of Produtor objects
     //  */

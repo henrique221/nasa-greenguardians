@@ -35,6 +35,11 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @ORM\OneToOne(targetEntity="Produtor", cascade={"persist"}, mappedBy="user")
+     */
+    private $produtor;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -106,5 +111,21 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProdutor()
+    {
+        return $this->produtor;
+    }
+
+    /**
+     * @param mixed $produtor
+     */
+    public function setProdutor($produtor): void
+    {
+        $this->produtor = $produtor;
     }
 }

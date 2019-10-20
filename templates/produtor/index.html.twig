@@ -1,0 +1,14 @@
+{% extends 'base/template.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    <div class="form-side">
+        {{ form_start(form) }}
+        {{ form_row(form.nome, {attr: {class: "form-control"}}) }}
+        <div class="d-flex justify-content-end align-items-center mt-4">
+            <button class="btn btn-primary btn-lg btn-shadow" type="submit">Salvar</button>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

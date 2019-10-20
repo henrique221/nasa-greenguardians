@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="bd3a5ad0-e579-402c-aa99-132bd0c9e356" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/api/hadFire.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/api/hadFire.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Produtor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Produtor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ProdutorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProdutorRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/menu.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base/template.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/template.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -172,7 +176,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571516951898</updated>
-      <workItem from="1571516953193" duration="24369000" />
+      <workItem from="1571516953193" duration="29584000" />
     </task>
     <servers />
   </component>
