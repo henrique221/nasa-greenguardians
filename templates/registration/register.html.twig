@@ -1,0 +1,28 @@
+{% extends 'base/template.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+    <h1>Registro {{ produtor is defined ? 'de produtor' : '' }}</h1>
+    <div class="form-side">
+        {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.username, {attr: {class: "form-control"}}) }}
+        {{ form_row(registrationForm.plainPassword, {attr: {class: "form-control"}}) }}
+        <label>
+            <div class="custom-control custom-checkbox mb-4">
+                {{ form_widget(registrationForm.agreeTerms, { attr: { class:"custom-control-input"}}) }}
+                {{ form_label(registrationForm.agreeTerms, null, {'label_attr': {'class': 'custom-control-label'}}) }}
+            </div>
+        </label>
+
+        <div class="d-flex justify-content-end align-items-center">
+            <button class="btn btn-primary btn-lg btn-shadow" type="submit">Registrar</button>
+        </div>
+        {{ form_end(registrationForm) }}
+    </div>
+    {% if produtor is not defined %}
+        <a href="{{ path('register_produtor') }}">Sou produtor</a>
+    {% else %}
+        <a href="{{ path('app_register') }}">Sou usuário</a>
+    {% endif %}
+{% endblock %}

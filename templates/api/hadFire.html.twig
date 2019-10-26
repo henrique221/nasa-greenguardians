@@ -1,8 +1,8 @@
 {% extends 'base/template.html.twig' %}
 
-{% block title %}Incendios na área{% endblock %}
-    {% set title = "Houve incendio na área" %}
-    {% block page_title %}{{ title }}!{% endblock %}
+{% block title %}Locais de incêndio{% endblock %}
+    {% set title = "Monitorar local" %}
+    {% block page_title %}{{ title }}{% endblock %}
 {% block content %}
     <div class="example-wrapper">
         <div class="form-group">
@@ -17,8 +17,62 @@
                 <small id="helpId" class="text-muted">insira a data final</small>
             </div>
         </div>
+
+        <h3>Mapa de incêndios</h3>
+        <!--The div element for the map -->
+        <div id="map"></div>
+
         {% if response != null %}
             {{ dump(response) }}
         {% endif %}
     </div>
+    <style>
+        #map {
+            width: 100%;
+            height: 400px;
+            background-color: grey;
+        }
+    </style>
+    <script>
+
+        function initMap() {
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 3,
+                center: {lat: -9.9831589, lng: -60.6764198}
+            });
+
+            // Create an array of alphabetical characters used to label the markers.
+            var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+            // Add some markers to the map.
+            // Note: The code uses the JavaScript Array.prototype.map() method to
+            // create an array of markers based on a given "locations" array.
+            // The map() method here has nothing to do with the Google Maps API.
+            var markers = locations.map(function(location, i) {
+                return new google.maps.Marker({
+                    position: location,
+                    label: labels[i % labels.length]
+                });
+            });
+
+            // Add a marker clusterer to manage the markers.
+            var markerCluster = new MarkerClusterer(map, markers,
+                {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+        }
+        var locations = [
+            {lat: -8.9831589, lng: -60.6764198},
+            {lat: -9.9832389, lng: -66.6761128},
+            {lat: -9.9834189, lng: -61.6764198},
+            {lat: -9.9831289, lng: -62.6764198},
+            {lat: -9.9831289, lng: -62.1764128},
+            {lat: -8.9831223, lng: -59.1764128},
+        ]
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEhagDXPf-hrqX8fUZOMr26rGeV3Kneaw&callback=initMap">
+    </script>
+
 {% endblock %}
